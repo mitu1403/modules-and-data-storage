@@ -1,0 +1,16 @@
+.bottle-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 2rem;
+  .bottles{
+    // margin: 2rem;
+    padding: 2rem;
+    & img{
+      width: 200px;
+      height: 200px;
+    }
+    & button{
+      margin-left: 20px ;
+    }
+  }
+}

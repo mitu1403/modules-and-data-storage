@@ -1,7 +1,0 @@
-[
-  { "id": 1, "model": "Apple Watch Series 9", "price": 3994 },
-  { "id": 2, "model": "Galaxy Watch 6", "price": 299 },
-  { "id": 3, "model": "Fitbit Versa 4", "price": 229 },
-  { "id": 4, "model": "Garmin Forerunner 265", "price": 449 },
-  { "id": 5, "model": "Amazfit GTR 4", "price": 199 }
-]
