@@ -1,35 +1,42 @@
 [
   {
+    "id": "1",
     "brand": "Hydro Flask",
     "picture": "https://media.wired.com/photos/672e7c867f9d2fc15cc4f3b8/master/w_1920%2Cc_limit/Owala-FreeSip-Twist-Reviewer-Photo-SOURCE.jpg",
     "price": 35.99
   },
   {
+    "id": "2",
     "brand": "Yeti",
     "picture": "https://media.wired.com/photos/63c71a06ba53d80ea8aba549/master/w_1920%2Cc_limit/YETI-Yonder-1L-Water-Bottle-Review-Gear.jpg",
     "price": 39.99
   },
   {
+    "id": "3",
     "brand": "CamelBak",
     "picture": "https://media.wired.com/photos/672e7d33f4f40feb3b89a3f1/master/w_1920%2Cc_limit/LARQ-Bottle-PureVis-2-SOURCE-Boutayna-Chokrane.jpg",
     "price": 24.99
   },
   {
+    "id": "4",
     "brand": "Nalgene",
     "picture": "https://media.wired.com/photos/672e7d878f8b555f2c33930e/master/w_1920%2Cc_limit/Nalgene-Sustain-Tritan-Water-Bottle-Reviewer-Photo-SOURCE-Martin-Cizmar.jpg",
     "price": 15.99
   },
   {
+    "id": "5",
     "brand": "S'well",
     "picture": "https://media.wired.com/photos/672e7de86237e56fb120b61a/master/w_1920%2Cc_limit/Fellow-Carter-Carry-Water-Bottle-Reviewer-Photo-SOURCE-Martin-Cizmar.jpg",
     "price": 29.99
   },
   {
+    "id": "6",
     "brand": "HydroJug Pro",
     "picture": "https://media.wired.com/photos/64b85f6140f1b0ff578447d5/master/w_1920%2Cc_limit/HydroJug-73oz-Featured-Gear.jpg",
     "price": 22.99
   },
   {
+    "id": "7",
     "brand": "Fellow Carter Carry",
     "picture": "https://media.wired.com/photos/5ee138399798446ce8080151/master/w_1920%2Cc_limit/Gear-Zojirushi---credit-amazon.jpg",
     "price": 29.99

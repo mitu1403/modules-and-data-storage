@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Bottle from "./Bottle";
+import Cart from "./Cart";
 import "./bottle.scss";
+import { addToLocalStorage, getStoredCart, removeFromLocalStorage } from "../Utils/localStorage";
 
 function Bottles() {
   const [bottles, setBottles] = useState([]);
@@ -12,25 +14,48 @@ function Bottles() {
       .then((data) => setBottles(data));
   }, []);
 
-  const handleCartCount = (bottle) => {
-    console.log(bottle);
-    if (!cart.includes(bottle)) {
-      setCart([...cart, bottle]);
+  // load cart from local storage
+  useEffect(() => {
+    if (bottles.length > 0) {
+      const storedCart = getStoredCart();
+      const cartItems = [];
+      for (const id of storedCart) {
+        const cartId = bottles.find((item) => item.id === id);
+        if(cartId){
+          cartItems.push(cartId);
+        }
+      }
+      setCart(cartItems);
     }
+  }, [bottles]);
+
+  const handleCartCount = (bottle) => {
+    setCart([...cart, bottle]);
+    addToLocalStorage(bottle.id);
   };
+
+  const handleRemoveItem = (id) =>{
+    removeFromLocalStorage(id)
+    const remainingCart = cart.filter(item => item.id !== id)
+    setCart(remainingCart)
+  }
 
   return (
     <div>
       <h2>Bottles Available: {bottles.length}</h2>
-      <p>Cart: {cart.length}</p>
-      <div className="bottle-container">
-        {bottles.map((bottle) => (
-          <Bottle
-            key={bottle.brand}
-            bottle={bottle}
-            handleCartCount={handleCartCount}
-          />
-        ))}
+      <div className="info-container">
+        <div className="bottle-container">
+          {bottles.map((bottle) => (
+            <Bottle
+              key={bottle.brand}
+              bottle={bottle}
+              handleCartCount={handleCartCount}
+            />
+          ))}
+        </div>
+        <div className="cart-container">
+          <Cart cart={cart} handleRemoveItem={handleRemoveItem}/>
+        </div>
       </div>
     </div>
   );

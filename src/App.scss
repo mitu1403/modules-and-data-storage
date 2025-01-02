@@ -1,0 +1,24 @@
+.container{
+  padding: 2rem;
+}
+.info-container{
+  display: flex;
+  // align-items: center;
+  gap: 1rem;
+  .bottle-container{
+    width: 70%;
+  }
+  .cart-container{
+    width: 30%;
+  }
+}
+.cart-image{
+  width: 100px;
+  height: 100px;
+}
+.cart-count{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
