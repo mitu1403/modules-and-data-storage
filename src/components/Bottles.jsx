@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 import Bottle from "./Bottle";
 import Cart from "./Cart";
 import "./bottle.scss";
-import { addToLocalStorage, getStoredCart, removeFromLocalStorage } from "../Utils/localStorage";
+import {
+  addToLocalStorage,
+  getStoredCart,
+  removeFromLocalStorage,
+} from "../Utils/localStorage";
 
 function Bottles() {
   const [bottles, setBottles] = useState([]);
@@ -21,7 +25,7 @@ function Bottles() {
       const cartItems = [];
       for (const id of storedCart) {
         const cartId = bottles.find((item) => item.id === id);
-        if(cartId){
+        if (cartId) {
           cartItems.push(cartId);
         }
       }
@@ -34,11 +38,23 @@ function Bottles() {
     addToLocalStorage(bottle.id);
   };
 
-  const handleRemoveItem = (id) =>{
-    removeFromLocalStorage(id)
-    const remainingCart = cart.filter(item => item.id !== id)
-    setCart(remainingCart)
-  }
+  const handleRemoveItem = (id) => {
+    removeFromLocalStorage(id);
+    const remainingCart = cart.filter((item) => item.id !== id);
+    setCart(remainingCart);
+  };
+  const handleAddItem = (id) => {
+    addToLocalStorage(id);
+    const storedCart = getStoredCart();
+    const cartItems = [];
+    for (const id of storedCart) {
+      const cartId = bottles.find((item) => item.id === id);
+      if (cartId) {
+        cartItems.push(cartId);
+      }
+    }
+    setCart(cartItems);
+  };
 
   return (
     <div>
@@ -54,7 +70,11 @@ function Bottles() {
           ))}
         </div>
         <div className="cart-container">
-          <Cart cart={cart} handleRemoveItem={handleRemoveItem}/>
+          <Cart
+            cart={cart}
+            handleRemoveItem={handleRemoveItem}
+            handleAddItem={handleAddItem}
+          />
         </div>
       </div>
     </div>
